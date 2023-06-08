@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="id" prefix="og: https://ogp.me/ns#">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fungsi Printf Pada C++ - QnA</title>
+    <meta name="description" content="Fungsi Printf Pada C++, Pemahaman MUDAH Tentang Printf dan Scanf, , , , 023 - Nico Natanael, 2020-03-26T06:17:42.000000Z, 23, How to use printf() function in C : Simple Explanation - YouTube, www.youtube.com, 1280 x 720, jpeg, , 20, fungsi-printf-pada-c, QnA" />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Fungsi Printf Pada C++ - QnA" />
+    <meta property="og:description" content="Fungsi Printf Pada C++, Pemahaman MUDAH Tentang Printf dan Scanf, , , , 023 - Nico Natanael, 2020-03-26T06:17:42.000000Z, 23, How to use printf() function in C : Simple Explanation - YouTube, www.youtube.com, 1280 x 720, jpeg, , 20, fungsi-printf-pada-c, QnA" />
+    <meta property="og:site_name" content="QnA" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Fungsi Printf Pada C++ - QnA" />
+    <meta name="twitter:description" content="Fungsi Printf Pada C++, Pemahaman MUDAH Tentang Printf dan Scanf, , , , 023 - Nico Natanael, 2020-03-26T06:17:42.000000Z, 23, How to use printf() function in C : Simple Explanation - YouTube, www.youtube.com, 1280 x 720, jpeg, , 20, fungsi-printf-pada-c, QnA" />
+    <link rel='stylesheet' id='generate-style-css' href='https://randomedukasi.github.io/css/main.min.css'?ver=3.2.4'
+        media='all' />
+    <link rel='stylesheet' id='ez-toc-css' href='https://randomedukasi.github.io/css/screen.min.css'?ver=2.0.40' media='all' />
+    <style id='generate-style-inline-css'>
+        body {
+            background-color: #f7f7f7;
+            color: #222222;
+        }
+
+        a {
+            color: #1e73be;
+        }
+
+        a:hover,
+        a:focus,
+        a:active {
+            color: #000000;
+        }
+
+        .wp-block-group__inner-container {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .generate-back-to-top {
+            font-size: 20px;
+            border-radius: 3px;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            line-height: 40px;
+            width: 40px;
+            text-align: center;
+            z-index: 10;
+            transition: opacity 300ms ease-in-out;
+            opacity: 0.1;
+            transform: translateY(1000px);
+        }
+
+        .generate-back-to-top__show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .navigation-search {
+            position: absolute;
+            left: -99999px;
+            pointer-events: none;
+            visibility: hidden;
+            z-index: 20;
+            width: 100%;
+            top: 0;
+            transition: opacity 100ms ease-in-out;
+            opacity: 0;
+        }
+
+        .navigation-search.nav-search-active {
+            left: 0;
+            right: 0;
+            pointer-events: auto;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .navigation-search input[type="search"] {
+            outline: 0;
+            border: 0;
+            vertical-align: bottom;
+            line-height: 1;
+            opacity: 0.9;
+            width: 100%;
+            z-index: 20;
+            border-radius: 0;
+            -webkit-appearance: none;
+            height: 60px;
+        }
+
+        .navigation-search input::-ms-clear {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        .navigation-search input::-ms-reveal {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        .navigation-search input::-webkit-search-decoration,
+        .navigation-search input::-webkit-search-cancel-button,
+        .navigation-search input::-webkit-search-results-button,
+        .navigation-search input::-webkit-search-results-decoration {
+            display: none;
+        }
+
+        .gen-sidebar-nav .navigation-search {
+            top: auto;
+            bottom: 0;
+        }
+
+        :root {
+            --contrast: #222222;
+            --contrast-2: #575760;
+            --contrast-3: #b2b2be;
+            --base: #f0f0f0;
+            --base-2: #f7f8f9;
+            --base-3: #ffffff;
+            --accent: #1e73be;
+        }
+
+        .has-contrast-color {
+            color: var(--contrast);
+        }
+
+        .has-contrast-background-color {
+            background-color: var(--contrast);
+        }
+
+        .has-contrast-2-color {
+            color: var(--contrast-2);
+        }
+
+        .has-contrast-2-background-color {
+            background-color: var(--contrast-2);
+        }
+
+        .has-contrast-3-color {
+            color: var(--contrast-3);
+        }
+
+        .has-contrast-3-background-color {
+            background-color: var(--contrast-3);
+        }
+
+        .has-base-color {
+            color: var(--base);
+        }
+
+        .has-base-background-color {
+            background-color: var(--base);
+        }
+
+        .has-base-2-color {
+            color: var(--base-2);
+        }
+
+        .has-base-2-background-color {
+            background-color: var(--base-2);
+        }
+
+        .has-base-3-color {
+            color: var(--base-3);
+        }
+
+        .has-base-3-background-color {
+            background-color: var(--base-3);
+        }
+
+        .has-accent-color {
+            color: var(--accent);
+        }
+
+        .has-accent-background-color {
+            background-color: var(--accent);
+        }
+
+        body,
+        button,
+        input,
+        select,
+        textarea {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+
+        body {
+            line-height: 1.5;
+        }
+
+        .entry-content>[class*="wp-block-"]:not(:last-child) {
+            margin-bottom: 1.5em;
+        }
+
+        .main-navigation .main-nav ul ul li a {
+            font-size: 14px;
+        }
+
+        .sidebar .widget,
+        .footer-widgets .widget {
+            font-size: 17px;
+        }
+
+        @media (max-width:768px) {
+            h1 {
+                font-size: 31px;
+            }
+
+            h2 {
+                font-size: 27px;
+            }
+
+            h3 {
+                font-size: 24px;
+            }
+
+            h4 {
+                font-size: 22px;
+            }
+
+            h5 {
+                font-size: 19px;
+            }
+        }
+
+        .top-bar {
+            background-color: #636363;
+            color: #ffffff;
+        }
+
+        .top-bar a {
+            color: #ffffff;
+        }
+
+        .top-bar a:hover {
+            color: #303030;
+        }
+
+        .site-header {
+            background-color: #ffffff;
+        }
+
+        .main-title a,
+        .main-title a:hover {
+            color: #222222;
+        }
+
+        .site-description {
+            color: #757575;
+        }
+
+        .main-navigation,
+        .main-navigation ul ul {
+            background-color: #ed4250;
+        }
+
+        .main-navigation .main-nav ul li a,
+        .main-navigation .menu-toggle,
+        .main-navigation .menu-bar-items {
+            color: #ffffff;
+        }
+
+        .main-navigation .main-nav ul li:not([class*="current-menu-"]):hover>a,
+        .main-navigation .main-nav ul li:not([class*="current-menu-"]):focus>a,
+        .main-navigation .main-nav ul li.sfHover:not([class*="current-menu-"])>a,
+        .main-navigation .menu-bar-item:hover>a,
+        .main-navigation .menu-bar-item.sfHover>a {
+            color: #ffffff;
+            background-color: #c42f2f;
+        }
+
+        button.menu-toggle:hover,
+        button.menu-toggle:focus {
+            color: #ffffff;
+        }
+
+        .main-navigation .main-nav ul li[class*="current-menu-"]>a {
+            color: #ffffff;
+            background-color: #c42f2f;
+        }
+
+        .navigation-search input[type="search"],
+        .navigation-search input[type="search"]:active,
+        .navigation-search input[type="search"]:focus,
+        .main-navigation .main-nav ul li.search-item.active>a,
+        .main-navigation .menu-bar-items .search-item.active>a {
+            color: #ffffff;
+            background-color: #c42f2f;
+        }
+
+        .main-navigation ul ul {
+            background-color: #c42f2f;
+        }
+
+        .main-navigation .main-nav ul ul li a {
+            color: #ffffff;
+        }
+
+        .main-navigation .main-nav ul ul li:not([class*="current-menu-"]):hover>a,
+        .main-navigation .main-nav ul ul li:not([class*="current-menu-"]):focus>a,
+        .main-navigation .main-nav ul ul li.sfHover:not([class*="current-menu-"])>a {
+            color: #fcd9d6;
+            background-color: #c42f2f;
+        }
+
+        .main-navigation .main-nav ul ul li[class*="current-menu-"]>a {
+            color: #fcd9d6;
+            background-color: #c42f2f;
+        }
+
+        .separate-containers .inside-article,
+        .separate-containers .comments-area,
+        .separate-containers .page-header,
+        .one-container .container,
+        .separate-containers .paging-navigation,
+        .inside-page-header {
+            background-color: #ffffff;
+        }
+
+        .entry-title a {
+            color: #222222;
+        }
+
+        .entry-title a:hover {
+            color: #55555e;
+        }
+
+        .entry-meta {
+            color: #595959;
+        }
+
+        .sidebar .widget {
+            background-color: #ffffff;
+        }
+
+        .footer-widgets {
+            background-color: #ffffff;
+        }
+
+        .footer-widgets .widget-title {
+            color: #000000;
+        }
+
+        .site-info {
+            color: #ffffff;
+            background-color: #55555e;
+        }
+
+        .site-info a {
+            color: #ffffff;
+        }
+
+        .site-info a:hover {
+            color: #d3d3d3;
+        }
+
+        .footer-bar .widget_nav_menu .current-menu-item a {
+            color: #d3d3d3;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="url"],
+        input[type="password"],
+        input[type="search"],
+        input[type="tel"],
+        input[type="number"],
+        textarea,
+        select {
+            color: #666666;
+            background-color: #fafafa;
+            border-color: #cccccc;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="url"]:focus,
+        input[type="password"]:focus,
+        input[type="search"]:focus,
+        input[type="tel"]:focus,
+        input[type="number"]:focus,
+        textarea:focus,
+        select:focus {
+            color: #666666;
+            background-color: #ffffff;
+            border-color: #bfbfbf;
+        }
+
+        button,
+        html input[type="button"],
+        input[type="reset"],
+        input[type="submit"],
+        a.button,
+        a.wp-block-button__link:not(.has-background) {
+            color: #ffffff;
+            background-color: #55555e;
+        }
+
+        button:hover,
+        html input[type="button"]:hover,
+        input[type="reset"]:hover,
+        input[type="submit"]:hover,
+        a.button:hover,
+        button:focus,
+        html input[type="button"]:focus,
+        input[type="reset"]:focus,
+        input[type="submit"]:focus,
+        a.button:focus,
+        a.wp-block-button__link:not(.has-background):active,
+        a.wp-block-button__link:not(.has-background):focus,
+        a.wp-block-button__link:not(.has-background):hover {
+            color: #ffffff;
+            background-color: #3f4047;
+        }
+
+        a.generate-back-to-top {
+            background-color: rgba(0, 0, 0, 0.4);
+            color: #ffffff;
+        }
+
+        a.generate-back-to-top:hover,
+        a.generate-back-to-top:focus {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+        }
+
+        @media (max-width:768px) {
+
+            .main-navigation .menu-bar-item:hover>a,
+            .main-navigation .menu-bar-item.sfHover>a {
+                background: none;
+                color: #ffffff;
+            }
+        }
+
+        .nav-below-header .main-navigation .inside-navigation.grid-container,
+        .nav-above-header .main-navigation .inside-navigation.grid-container {
+            padding: 0px 20px 0px 20px;
+        }
+
+        .site-main .wp-block-group__inner-container {
+            padding: 40px;
+        }
+
+        .separate-containers .paging-navigation {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .entry-content .alignwide,
+        body:not(.no-sidebar) .entry-content .alignfull {
+            margin-left: -40px;
+            width: calc(100% + 80px);
+            max-width: calc(100% + 80px);
+        }
+
+        .rtl .menu-item-has-children .dropdown-menu-toggle {
+            padding-left: 20px;
+        }
+
+        .rtl .main-navigation .main-nav ul li.menu-item-has-children>a {
+            padding-right: 20px;
+        }
+
+        @media (max-width:768px) {
+
+            .separate-containers .inside-article,
+            .separate-containers .comments-area,
+            .separate-containers .page-header,
+            .separate-containers .paging-navigation,
+            .one-container .site-content,
+            .inside-page-header {
+                padding: 30px;
+            }
+
+            .site-main .wp-block-group__inner-container {
+                padding: 30px;
+            }
+
+            .inside-top-bar {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+
+            .inside-header {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+
+            .widget-area .widget {
+                padding-top: 30px;
+                padding-right: 30px;
+                padding-bottom: 30px;
+                padding-left: 30px;
+            }
+
+            .footer-widgets-container {
+                padding-top: 30px;
+                padding-right: 30px;
+                padding-bottom: 30px;
+                padding-left: 30px;
+            }
+
+            .inside-site-info {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+
+            .entry-content .alignwide,
+            body:not(.no-sidebar) .entry-content .alignfull {
+                margin-left: -30px;
+                width: calc(100% + 60px);
+                max-width: calc(100% + 60px);
+            }
+
+            .one-container .site-main .paging-navigation {
+                margin-bottom: 20px;
+            }
+        }
+
+        /* End cached CSS */
+        .is-right-sidebar {
+            width: 30%;
+        }
+
+        .is-left-sidebar {
+            width: 30%;
+        }
+
+        .site-content .content-area {
+            width: 70%;
+        }
+
+        @media (max-width:768px) {
+
+            .main-navigation .menu-toggle,
+            .sidebar-nav-mobile:not(#sticky-placeholder) {
+                display: block;
+            }
+
+            .main-navigation ul,
+            .gen-sidebar-nav,
+            .main-navigation:not(.slideout-navigation):not(.toggled) .main-nav>ul,
+            .has-inline-mobile-toggle #site-navigation .inside-navigation>*:not(.navigation-search):not(.main-nav) {
+                display: none;
+            }
+
+            .nav-align-right .inside-navigation,
+            .nav-align-center .inside-navigation {
+                justify-content: space-between;
+            }
+        }
+    </style>
+    <link rel="icon" href="https://randomedukasi.github.io/img/cropped-soalbelajar-32x32.png" sizes="32x32" />
+    <link rel="icon" href="https://randomedukasi.github.io/img/cropped-soalbelajar-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="https://randomedukasi.github.io/img/cropped-soalbelajar-180x180.png" />
+    <meta name="msapplication-TileImage" content="https://randomedukasi.github.io/img/cropped-soalbelajar-270x270.png" />
+</head>
+
+<body
+    class="home blog wp-custom-logo wp-embed-responsive right-sidebar nav-above-header separate-containers nav-search-enabled nav-aligned-center header-aligned-center dropdown-hover"
+    itemtype="https://schema.org/Blog" itemscope>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-dark-grayscale">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 0.49803921568627" />
+                    <feFuncG type="table" tableValues="0 0.49803921568627" />
+                    <feFuncB type="table" tableValues="0 0.49803921568627" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-grayscale">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 1" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0 1" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-purple-yellow">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-blue-red">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 1" />
+                    <feFuncG type="table" tableValues="0 0.27843137254902" />
+                    <feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-midnight">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 0" />
+                    <feFuncG type="table" tableValues="0 0.64705882352941" />
+                    <feFuncB type="table" tableValues="0 1" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-magenta-yellow">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.78039215686275 1" />
+                    <feFuncG type="table" tableValues="0 0.94901960784314" />
+                    <feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-purple-green">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0.44705882352941 0.4" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-blue-orange">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.098039215686275 1" />
+                    <feFuncG type="table" tableValues="0 0.66274509803922" />
+                    <feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><a class="screen-reader-text skip-link" href="#content" title="Langsung ke isi">Langsung ke isi</a>
+    <nav class="main-navigation nav-align-center has-menu-bar-items sub-menu-right" id="site-navigation"
+        aria-label="Utama" itemtype="https://schema.org/SiteNavigationElement" itemscope>
+        <div class="inside-navigation grid-container">
+            <form method="get" class="search-form navigation-search" action="/">
+                <input type="search" class="search-field" value="" name="q" title="Cari" />
+            </form> <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                <span class="gp-icon icon-menu-bars"><svg viewBox="0 0 512 512" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                        <path
+                            d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z" />
+                    </svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        width="1em" height="1em">
+                        <path
+                            d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" />
+                    </svg></span><span class="mobile-menu">Menu</span> </button>
+            <div id="primary-menu" class="main-nav">
+                <ul id="menu-soal-belajar" class=" menu sf-menu">
+                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1"><a
+                            href="https://randomedukasi.github.io">Home</a></li>
+                </ul>
+                </ul>
+            </div>
+            <div class="menu-bar-items"><span class="menu-bar-item search-item"><a aria-label="Buka Kolom Pencarian"
+                        href="#"><span class="gp-icon icon-search"><svg viewBox="0 0 512 512"
+                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M208 48c-88.366 0-160 71.634-160 160s71.634 160 160 160 160-71.634 160-160S296.366 48 208 48zM0 208C0 93.125 93.125 0 208 0s208 93.125 208 208c0 48.741-16.765 93.566-44.843 129.024l133.826 134.018c9.366 9.379 9.355 24.575-.025 33.941-9.379 9.366-24.575 9.355-33.941-.025L337.238 370.987C301.747 399.167 256.839 416 208 416 93.125 416 0 322.875 0 208z" />
+                            </svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                width="1em" height="1em">
+                                <path
+                                    d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" />
+                            </svg></span></a></span></div>
+        </div>
+    </nav>
+    <header class="site-header grid-container" id="masthead" aria-label="Situs"
+        itemtype="https://schema.org/WPHeader" itemscope>
+        <div class="inside-header grid-container">
+            <h1 class="site-logo">
+                <a href="https://randomedukasi.github.io" rel="home"> QnA</a>
+            </h1>
+        </div>
+    </header>
+
+    <div class="site grid-container container hfeed" id="page">
+        <div class="site-content" id="content">
+            <div class="content-area" id="primary">
+                    <main class="site-main" id="main">
+        <article id="post-1327" class="post-1327 post type-post status-publish format-standard hentry category-info"
+            itemtype="https://schema.org/CreativeWork" itemscope="">
+            <div class="inside-article">
+                <header class="entry-header" aria-label="Konten">
+                    <h1 class="entry-title" itemprop="headline">Fungsi Printf Pada C++</h1>
+                    <div class="entry-meta">
+                       <span
+                            class="byline">oleh <span class="author vcard" itemprop="author"
+                                itemtype="https://schema.org/Person" itemscope=""><span class="author-name"
+                                    itemprop="name">Sucinurul29</span></span></span>
+                    </div>
+                </header>
+                <div class="entry-content" itemprop="text">
+                    <div style="text-align: center">
+                        <img src="https://tse1.mm.bing.net/th?q=Fungsi+Printf+Pada+C%2B%2B" alt="Fungsi Printf Pada C++">
+                    </div>
+                    <p></p>
+                    <p>Fungsi &quot; di dalam printf</p>
+                    <div id="ez-toc-container"
+                        class="ez-toc-v2_0_40 counter-hierarchy ez-toc-counter ez-toc-light-blue ez-toc-container-direction">
+                        <div class="ez-toc-title-container">
+                            <p class="ez-toc-title">Daftar Isi</p>
+                            <span class="ez-toc-title-toggle"><a href="#"
+                                    class="ez-toc-pull-right ez-toc-btn ez-toc-btn-xs ez-toc-btn-default ez-toc-toggle"
+                                    area-label="ez-toc-toggle-icon-1"><label for="item-63b392361c4a0"
+                                        aria-label="Table of Content"><span
+                                            style="display: flex;align-items: center;width: 35px;height: 30px;justify-content: center;direction:ltr;"><svg
+                                                style="fill: #999;color:#999" xmlns="http://www.w3.org/2000/svg"
+                                                class="list-377408" width="20px" height="20px" viewBox="0 0 24 24"
+                                                fill="none">
+                                                <path
+                                                    d="M6 6H4v2h2V6zm14 0H8v2h12V6zM4 11h2v2H4v-2zm16 0H8v2h12v-2zM4 16h2v2H4v-2zm16 0H8v2h12v-2z"
+                                                    fill="currentColor"></path>
+                                            </svg><svg style="fill: #999;color:#999" class="arrow-unsorted-368013"
+                                                xmlns="http://www.w3.org/2000/svg" width="10px" height="10px"
+                                                viewBox="0 0 24 24" version="1.2" baseProfile="tiny">
+                                                <path
+                                                    d="M18.2 9.3l-6.2-6.3-6.2 6.3c-.2.2-.3.4-.3.7s.1.5.3.7c.2.2.4.3.7.3h11c.3 0 .5-.1.7-.3.2-.2.3-.5.3-.7s-.1-.5-.3-.7zM5.8 14.7l6.2 6.3 6.2-6.3c.2-.2.3-.5.3-.7s-.1-.5-.3-.7c-.2-.2-.4-.3-.7-.3h-11c-.3 0-.5.1-.7.3-.2.2-.3.5-.3.7s.1.5.3.7z">
+                                                </path>
+                                            </svg></span></label><input type="checkbox" id="item-63b392361c4a0"></a></span>
+                        </div>
+                        <nav>
+                            <ul class="ez-toc-list ez-toc-list-level-1 ">
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#fungsi-di-dalam-printf">1.
+                                            Fungsi " di dalam printf</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#berikut-ini-adalah-pasangan-fungsi-inputoutput-yang-benar-kecuali-a-scanf-dan-printf-b-cin-dan-coutc-getche-dan-printf-d-getch-dan-printf-e-scanf-dan-cout-%e2%80%8b">2.
+                                            Berikut ini adalah pasangan fungsi input/output yang benar, kecuali..a.scanf () dan printf ()b.cin () dan cout()c.getche () dan printf ()d.getch () dan printf ()e.scanf () dan cout().​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#apa-perbedaan-penggunaan-fungsi-puts-dan-printf">3.
+                                            apa perbedaan penggunaan fungsi puts dan printf</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#2-berikan-contoh-penulisan-output-dengan-menggunakan-operator-printf-3-jelaskan-fungsi-penulisan-dengan-fungsi-printf-4-jelaskan-format-control-yang-disertai-dengan-symbol-pada-penulisan-sintaks">4.
+                                            2. Berikan contoh penulisan output dengan menggunakan operator printf! 3. Jelaskan fungsi penulisan dengan fungsi printf(! 4. Jelaskan format control yang disertai dengan symbol% pada penulisan sintaks 5. Sebutkan aplikasi output dengan menggunakan konstanta ANSI! dijawabb .....​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#apakah-pengertian-dari-printf-%e2%80%8b">5.
+                                            Apakah pengertian dari printf ()?​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#jurusan-rpl-caranya-membetulkan-tulisan-gimana-tolong-bantu-jawab-menentukan-nilai-ke-hurufinclude-stdio-hmain-printf-program-menentukan-nilai-ke-hurufnprintf-nint-nilaiprint">6.
+                                            jurusan rpl caranya membetulkan tulisan  gimana??..tolong bantu jawab MENENTUKAN NILAI KE HURUF#include &lt;stdio.h&gt;main ()printf ("PROGRAM MENENTUKAN NILAI KE HURUF\n):printf ("\n):int nilai:printf ("Masukkan nilai anda:"):scanf (%d, &amp;nilai):if(nilai &gt;= 80 &amp;&amp; nilai &lt;= 100){printf ("Predikat Anda = A \n):Jelse if (nilai &gt;= 70 &amp;&amp; nilai &lt;= 79){printf ("Predikat Anda = B \n):Jelse if (nilai &gt;=55 &amp;&amp; nilai = 69){printf ("Predikat Anda = C \n):Jelse if (nilai &gt;= 45 &amp;&amp; nilai &lt;= 54){printf ("Predikat Anda = D \n"):Jelse{printf ("Predikat Anda = E \n"):if (nilai &gt;= 56)}{printf ("Anda dinyatakan LULUS"):Jelselprintf ('Anda mengulang materi"):PROGRAM MENGHITUNG VOLUME TABUNG ​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#jelaskan-struktur-dasar-fungsi-printf">7.
+                                            Jelaskan struktur dasar fungsi printf():</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#apakah-fungsi-scanf-selalu-harus-disertai-dengan-fungsi-printfjelaskan-jawabnmu">8.
+                                            Apakah fungsi scanf selalu harus disertai dengan fungsi printf?jelaskan jawabnmu</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#perhatikan-potongan-program-berikutif-harga-8000-printfapelelse-if-harga-5000-printfmanggaelse-printfjerukif-harga-3000-printfpisangelse-printfwortel">9.
+                                            Perhatikan potongan program berikut:
+if (harga &gt;= 8000) printf("Apel");
+else if (harga &gt;= 5000) printf("Mangga");
+else printf("Jeruk");
+if (harga &gt; 3000) printf("Pisang");
+else printf("Wortel");
+Berapa nilai harga harus diberikan agar 
+potongan program tersebut mencetak 
+"JerukPisang"?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#program-di-bawah-ini-tidak-berhasil-di-compile-karena-masih-terdapat-beberapakesalahan-betulkan-kesalahan-program-dibawah-ini-dan-tampilkan-hasilnyainclude-mainprintf%e2%80%9dternyata-sem">10.
+                                            Program di bawah ini tidak berhasil di-compile karena masih terdapat beberapa
+kesalahan. Betulkan kesalahan program dibawah ini, dan tampilkan hasilnya:
+#include 
+main()
+{
+printf(”ternyata semester %f ini nilaiku jelek”,4);
+printf(”matematika %d dan metode numerik %c”,’B’,D);
+printf(”ooooo.....ternyata kuliah itu susah %d”,”sekali”);
+printf(”sepertinya %s rajin belajar minimal %s sehari”,’harus’,8);</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#jelaskan-perbedaan-perintah-progam-printf-dan-scancf-pada-bahasa-c%e2%80%8b">11.
+                                            jelaskan perbedaan perintah progam printf dan scancf pada bahasa c​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#perhatikan-potongan-kode-bahasa-c-berikut-int-nilai65ifnilai85printf%e2%80%9csangat-baik%e2%80%9delseifnilai75-nilai85printf%e2%80%9cbaik%e2%80%9delseifnil">12.
+                                            Perhatikan potongan kode bahasa C++ berikut.int nilai=65;if(nilai&gt;85){printf(“SANGAT BAIK”);}else{if(nilai&gt;75 &amp;&amp; nilai&lt;=85){printf(“BAIK”);}else{If(nilai&gt;65 &amp;&amp; nilai&lt;=75){printf(“CUKUP BAIK”);}else{printf(“TIDAK LULUS”);}}}Keluaran dari program tersebut adalah​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#perhatikan-potongan-codingan-dibawah-ini-void-a-printf%e2%80%9csaya-suka-belajar-algoritma%e2%80%9d-int-b-printf%e2%80%9csaya-suka-belajar-java%e2%80%9d-return-0-void-cint-angka1-i">13.
+                                            Perhatikan potongan codingan dibawah ini! void a(){ printf(“Saya suka belajar Algoritma”); } int b(){ printf(“Saya suka belajar Java”); return 0; } void c(int angka1, int angka2){ printf(“%d”, angka1+angka2); } Untuk menjumlahkan 2 angka, maka fungsi yang harus dipanggil dari fungsi main adalah
+A. void c();
+ B. c(5,2);
+ C. void c(5,2);
+ D. c();</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#apakah-fungsi-scanf-selalu-harus-disertai-dengan-fungsi-printf-jelaskan-jawabanmu">14.
+                                            Apakah fungsi scanf selalu harus disertai dengan fungsi printf? jelaskan jawabanmu</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#a-jelaskan-definisi-dari-printfb-sebutkan-kegunaan-dari-printfc-jelaskan-aturan-sintaks-penggunaan-keyword-printfdalam-pemrograman-dasar-bahasa-c">15.
+                                            a. jelaskan definisi dari printf()
+b. sebutkan kegunaan dari printf()
+c. jelaskan aturan (sintaks) penggunaan keyword printf()
+dalam pemrograman dasar bahasa C</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#3-diketahui-pemograman-c-di-bawah-ini%e2%80%a2include-%e2%80%a2main-%e2%80%a2float-abcd%e2%80%a2printf-%e2%80%9cnilai-a-%e2%80%9c-scanf%e2%80%9cfn%e2%80%9da">16.
+                                            3.	Diketahui pemograman c di bawah ini!
+•	#include 
+•	Main (){
+•	float a,b,c,d;
+•	printf (“Nilai a       = “ );scanf(“%f\n”,&amp;a);
+•	printf (“Nilai b        = “ );scanf(“%f\n”,&amp;b);
+•	c = a+b; d= (a+b) /( a*b);printf (“nilai c   =  f\n”, c);printf(“nilai d        =  f”,d);
+•	} 
+Pada program C di atas terdapat kesalahan perintah, pada baris ke berapa terjadi kesalahan dan jelaskan!</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#silahkan-cari-kesalahan-dan-perbaiki-program-include-stdio-hint-mainvoidfloat-noprintfmenu-nprintf1-ayam-goreng-nasi-nprintf2-ayam-bakar-nasi-n-nprintfmasukkan">17.
+                                            SILAHKAN CARI KESALAHAN DAN PERBAIKI PROGRAM #include &lt;stdio.h&gt;int main(void){float no;printf("MENU: \n");printf("1. Ayam Goreng + Nasi \n");printf("2. Ayam Bakar + Nasi \n \n");printf("Masukkan Nomor Pesanan (1 atau 2) : );scanf(“&amp;d", &amp;no);printf("\n");if(no = 1){printf("Anda Memesan Ayam Goreng + Nasi \n");if elseprintf("Anda Memesan Ayam Bakar + Nasi \n");}return 0;}​​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#if-lama_kerja3-printf-%e2%80%9dsenior%e2%80%9d-else-printf-%e2%80%9djunior%e2%80%9d-jika-lama_kerja-adalah-3-maka-keluaran-dari-program-tersebut-adalah">18.
+                                            If (lama_kerja&gt;3) { Printf (”SENIOR”); }else{ Printf (”JUNIOR”); } Jika lama_kerja adalah 3 maka keluaran dari program tersebut adalah...</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#fungsi-yang-tepat-untuk-menampilkan-output-kepada-user-adalah-a-printfb-scanfc-scannerd-printer">19.
+                                            Fungsi yang tepat untuk menampilkan output kepada user adalah...
+A. Printf
+B. Scanf
+C. Scanner
+D. Printer</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#buatkan-script-di-qtc-jangan-pakai-printf-pakai-perulangan">20.
+                                            buatkan script di Qt/c++ 
+-jangan pakai printf
+-pakai perulangan</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#fungsi-yang-tepat-untuk-membaca-inputan-user-adalah-a-printfb-scanfc-scannerd-printer">21.
+                                            Fungsi yang tepat untuk membaca inputan user adalah...
+A. Printf
+B. Scanf
+C. Scanner
+D. Printer</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#include-stdio-h-int-main-printfhain-printfnama-saya-sndian-printfusia-saya-dn20-return-0pada-contoh-soal-tersebut-terdapat-simbol-n-yang-memiliki-fungsi-sebagai">22.
+                                            #include &lt;stdio.h&gt; int main() { printf("Hai\n"); printf("Nama saya %s\n","Dian"); printf("Usia saya %d\n",20); return 0}Pada contoh soal tersebut terdapat simbol \n yang memiliki fungsi sebagai…​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#perhatikan-potongan-codingan-dibawah-inivoid-a-printf%e2%80%9csaya-suka-belajar-algoritma%e2%80%9dint-b-printf%e2%80%9csaya-suka-belajar-java%e2%80%9d-return-0void-cint-angka1">23.
+                                            Perhatikan potongan codingan dibawah ini!
+void a(){
+ printf(“Saya suka belajar Algoritma”);
+}
+int b(){
+ printf(“Saya suka belajar Java”);
+ return 0;
+}
+void c(int angka1, int angka2){
+ printf(“%d”, angka1+angka2);
+}
+Agar pada layar muncul tulisan “Saya suka belajar Java” maka yang harus diketik pada fungsi main adalah…
+ A. void a();
+ B. void b();
+ C. b();
+ D. b;</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#dapet-tugas-kayak-gini-di-suruh-koreksi-code-yang-ada-mohon-bantuannyainclude-include-int-mainchar-cprintfnenter-a-character-scanfcc-memeriksa-apakah-karakter-yang">24.
+                                            Dapet tugas kayak gini. di suruh koreksi code yang ada. mohon bantuannya
+#include 
+#include 
+int main()
+{
+char c;
+printf("\nEnter a character: ");
+scanf("%c",&amp;c);
+/* memeriksa apakah karakter yang dimasukkan lowercase atau bukan*/
+if (islower(c)!=0)
+printf("%c adalah huruf kecil.",c);
+else {
+printf("%c bukan huruf kecil.\n",c);
+printf("%c adalah huruf kecil %c.",tolower(c),c);
+}
+return 0;
+}</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#fungsi-printf-terdapat-pada-standard-library%e2%80%a6-a-stdlib-h-b-stdio-h-c-strlen-h-d-string-h">25.
+                                            Fungsi printf terdapat pada standard library…
+ A. stdlib.h
+ B. stdio.h
+ C. strlen.h
+ D. string.h</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#apakah-fungsi-scanf-selalu-harus-disertai-dengan-fungsi-printfjelaskan-jawabnmu">26.
+                                            Apakah fungsi scanf selalu harus disertai dengan fungsi printf?jelaskan jawabnmu</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#ifumur-17printf%e2%80%9canda-masih-kecil%e2%80%9delse-ifumur-17-umur-21printf%e2%80%9canda-sudah-remaja%e2%80%9delseprintf%e2%80%9canda-sudah-dewasa%e2%80%9d">27.
+                                            if(umur &lt; 17){printf(“Anda masih kecil”);}else if(umur &gt;= 17 &amp;&amp; umur &lt; 21){printf(“Anda sudah remaja”);}else{printf(“Anda sudah dewasa”);}Jika user menginput umurnya adalah 21 maka akan muncul output… A. Anda masih kecil B. Anda sudah remaja C. Anda sudah dewasa D. Tidak ada output​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#misalkan-variabel-a-berisi-bilangan-3-14-penulisan-kode-yang-tepat-untuk-menampilkan-isi-variabel-a-adalah-a-printfa-dab-printfa-dac-printfa-fad-printfa-fa">28.
+                                            Misalkan variabel a berisi bilangan 3.14 penulisan kode yang tepat untuk menampilkan isi variabel a adalah.....
+a. printf("a = %d",a);
+b. printf("a =%d",&amp;a);
+c. printf("a =%f",a);
+d. printf("a =%f",&amp;a);
+e. printf("a =",a); 
+Kira kira yang mana Yaa Masih pemula masih bingung saya mohon Dijawab yang bisa ya :) </a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#header-apa-yang-digunakan-untuk-printf-pada-program-c">29.
+                                            header apa yang digunakan untuk "printf" pada program c++?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#apa-saja-perintah-output-dalam-bahasa-cselain-printfputsputchar">30.
+                                            Apa saja perintah output dalam bahasa C,selain printf,puts,putchar?</a>
+                                    </li>
+                                                            </ul>
+                        </nav>
+                    </div>
+                                            <h2 class="ez-toc-section" id="fungsi-di-dalam-printf">
+                            1. Fungsi " di dalam printf</h2><br />
+                        Fungsi printf() berfungsi untuk menampilkan keluaran data dan fungsi scanf() berguna untuk membaca masukkan data. Kedua ffungsi ini terdapat pada header <br />
+                                            <h2 class="ez-toc-section" id="berikut-ini-adalah-pasangan-fungsi-inputoutput-yang-benar-kecuali-a-scanf-dan-printf-b-cin-dan-coutc-getche-dan-printf-d-getch-dan-printf-e-scanf-dan-cout-%e2%80%8b">
+                            2. Berikut ini adalah pasangan fungsi input/output yang benar, kecuali..a.scanf () dan printf ()b.cin () dan cout()c.getche () dan printf ()d.getch () dan printf ()e.scanf () dan cout().​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>e. scanf() dan cout()</p><p><strong>Penjelasan:</strong></p><p>karena scanf() hanya bisa berpasangan dengan printf(), dan cout() harusnya dengan cin()</p><br />
+                                            <h2 class="ez-toc-section" id="apa-perbedaan-penggunaan-fungsi-puts-dan-printf">
+                            3. apa perbedaan penggunaan fungsi puts dan printf</h2><br />
+                        ini kakak pembina di sekolahku katanya(salam hormat)<br />
+                                            <h2 class="ez-toc-section" id="2-berikan-contoh-penulisan-output-dengan-menggunakan-operator-printf-3-jelaskan-fungsi-penulisan-dengan-fungsi-printf-4-jelaskan-format-control-yang-disertai-dengan-symbol-pada-penulisan-sintaks">
+                            4. 2. Berikan contoh penulisan output dengan menggunakan operator printf! 3. Jelaskan fungsi penulisan dengan fungsi printf(! 4. Jelaskan format control yang disertai dengan symbol% pada penulisan sintaks 5. Sebutkan aplikasi output dengan menggunakan konstanta ANSI! dijawabb .....​</h2><br />
+                        <p><strong>Penjelasan:</strong></p><p>historiografi sosok si sop sup spesialrsituuodirektris si teori telusuri auditor direktris disisir dituruti digigit tiris Fitria tidur turut Yut ef Ti. Ti. do ski</p><br />
+                                            <h2 class="ez-toc-section" id="apakah-pengertian-dari-printf-%e2%80%8b">
+                            5. Apakah pengertian dari printf ()?​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>Fungsi printf() merupakan fungsi untuk menampilkan output ke layar komputer. Fungsi ini terdapat pada library stdio.h . Oleh sebab itu, ketika kita diharuskan untuk menuliskan #include &lt;stdio.h&gt; di bagian atas program agar bisa menggunakan fungsi ini.</p><br />
+                                            <h2 class="ez-toc-section" id="jurusan-rpl-caranya-membetulkan-tulisan-gimana-tolong-bantu-jawab-menentukan-nilai-ke-hurufinclude-stdio-hmain-printf-program-menentukan-nilai-ke-hurufnprintf-nint-nilaiprint">
+                            6. jurusan rpl caranya membetulkan tulisan  gimana??..tolong bantu jawab MENENTUKAN NILAI KE HURUF#include &lt;stdio.h&gt;main ()printf ("PROGRAM MENENTUKAN NILAI KE HURUF\n):printf ("\n):int nilai:printf ("Masukkan nilai anda:"):scanf (%d, &amp;nilai):if(nilai &gt;= 80 &amp;&amp; nilai &lt;= 100){printf ("Predikat Anda = A \n):Jelse if (nilai &gt;= 70 &amp;&amp; nilai &lt;= 79){printf ("Predikat Anda = B \n):Jelse if (nilai &gt;=55 &amp;&amp; nilai = 69){printf ("Predikat Anda = C \n):Jelse if (nilai &gt;= 45 &amp;&amp; nilai &lt;= 54){printf ("Predikat Anda = D \n"):Jelse{printf ("Predikat Anda = E \n"):if (nilai &gt;= 56)}{printf ("Anda dinyatakan LULUS"):Jelselprintf ('Anda mengulang materi"):PROGRAM MENGHITUNG VOLUME TABUNG ​</h2><br />
+                        <p>jawab</p><p><strong>koding yg bnr gni bg:</strong></p><p>#include &lt;stdio.h&gt;</p><p>int main() {</p><p>    printf("<strong>PROGRAM MENENTUKAN NILAI KE HURUF</strong>\n\n");</p><p>    int nilai;</p><p>    printf("Masukkan nilai anda: ");</p><p>    scanf("%d", &amp;nilai);</p><p>    if (nilai &gt;= 80 &amp;&amp; nilai &lt;= 100) {</p><p>        printf("Predikat Anda = A\n");</p><p>    } else if (nilai &gt;= 70 &amp;&amp; nilai &lt;= 79) {</p><p>        printf("Predikat Anda = B\n");</p><p>    } else if (nilai &gt;= 55 &amp;&amp; nilai &lt;= 69) {</p><p>        printf("Predikat Anda = C\n");</p><p>    } else if (nilai &gt;= 45 &amp;&amp; nilai &lt;= 54) {</p><p>        printf("Predikat Anda = D\n");</p><p>    } else {</p><p>        printf("Predikat Anda = E\n");</p><p>        if (nilai &gt;= 56) {</p><p>            printf("Anda dinyatakan LULUS\n");</p><p>        } else {</p><p>            printf("Anda mengulang materi\n");</p><p>        }</p><p>    }</p><p>    return 0;</p><p>}</p><br />
+                                            <h2 class="ez-toc-section" id="jelaskan-struktur-dasar-fungsi-printf">
+                            7. Jelaskan struktur dasar fungsi printf():</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>yaitu merupakan fungsi untuk menampilkan output ke layar komputer.</p><p><strong>Penjelasan:</strong></p><p>Fungsi ini terdapat pada library{stdio.h} dan juga {iostream}.</p><br />
+                                            <h2 class="ez-toc-section" id="apakah-fungsi-scanf-selalu-harus-disertai-dengan-fungsi-printfjelaskan-jawabnmu">
+                            8. Apakah fungsi scanf selalu harus disertai dengan fungsi printf?jelaskan jawabnmu</h2><br />
+                        scanf adalah fungsi untuk membaca inputan pada suatu program, sedangkan<br /><br />printf adalah fungsi untuk menampilkan character atau nilai dari suatu variable<br />
+                                            <h2 class="ez-toc-section" id="perhatikan-potongan-program-berikutif-harga-8000-printfapelelse-if-harga-5000-printfmanggaelse-printfjerukif-harga-3000-printfpisangelse-printfwortel">
+                            9. Perhatikan potongan program berikut:
+if (harga &gt;= 8000) printf("Apel");
+else if (harga &gt;= 5000) printf("Mangga");
+else printf("Jeruk");
+if (harga &gt; 3000) printf("Pisang");
+else printf("Wortel");
+Berapa nilai harga harus diberikan agar 
+potongan program tersebut mencetak 
+"JerukPisang"?</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>nilai yang harus diberikan antara 3001 s/d 4999</p><p><strong>Penjelasan:</strong></p><p>if (harga &gt;= 8000) printf("Apel");
+</p><strong>artinya jika input nilai &gt;=8000 akan tercetak apel</strong><p>else if (harga &gt;= 5000) printf("Mangga");
+</p><strong>artinya jika input nilai selain 8000 sampai &gt;=5000 akan tercetak mangga</strong><p>else printf("Jeruk");
+</p><strong>artinya jika input nilai selain &lt;5000 akan tercetak jeruk</strong><p>if (harga &gt; 3000) printf("Pisang");
+</p><strong>artinya jika input nilai selain &gt;3000 akan tercetak Pisang</strong><p>else printf("Wortel");</p><strong>artinya jika input nilai selain &lt;3000 akan tercetak Wortel</strong><strong></strong><strong>jadi range input agar tercetak jerukpisang harus lebih besar dari 3000 dan angka sebelum 5000</strong><strong></strong><strong>artinya 3001 - 4999</strong><strong></strong><p>semoga membantu</p><p></p><strong>Jawaban:</strong>3001 sampai 4999 (3001, 3002, 3003, 3004, ..., 4996, 4997, 4998, 4999).<strong>Penjelasan:</strong>if (harga &gt;= 8000) printf("Apel");<p>Artinya: Jika input harga ≥8000 (lebih dari 8000 atau sama dengan 8000), maka program akan mencetak pesan "Apel".</p><p></p>else if (harga &gt;= 5000) printf("Mangga");<p>Artinya: Jika input harga ≥5000 (lebih dari 50000 atau sama dengan 8000), maka program akan mencetak pesan "Mangga".</p><p></p>else printf("Jeruk");<p>Untuk else (only) di sini akan mengambil nilai yang tidak disebutkan pada kedua if di atas. Jadi, apabila bilangan mulai dari 5000 dan lebih dari 5000 sudah disebutkan, maka yang belum disebutkan adalah bilangan kurang dari 5000.</p><p>Artinya: Jika input harga &lt;5000 (kurang dari 5000), maka program akan mencetak pesan "Jeruk".</p><p></p><p></p>if (harga &gt; 3000) printf("Pisang");<p>Artinya: Jiika input harga &gt;3000 (lebih dari 3000), maka program akan mencetak pesan "Pisang".</p><p></p>else printf("Wortel");<p>Artinya: Jika input harga ≤3000 (kurang dari atau sama dengan 3000), maka program akan mencetak pesan "Wortel".</p><p></p><p></p><p></p><p>Untuk mencetak pesan "JerukPisang", maka ambil harga untuk jeruk yaitu &gt;3000 (3001, 3002, 3003, ...) dan harga untuk pisang yaitu &lt;5000 (..., 4997, 4998, 4999), lalu gabungkan.</p><p>Sehingga, nilai harga yang harus diberikan/diinputkan agar program tersebut dapat mencetak pesan "JerukPisang" adalah nilai mulai dari 3001 sampai 4999 (3001, 3002, 3003, 3004, ..., 4996, 4997, 4998, 4999).</p><br />
+                                            <h2 class="ez-toc-section" id="program-di-bawah-ini-tidak-berhasil-di-compile-karena-masih-terdapat-beberapakesalahan-betulkan-kesalahan-program-dibawah-ini-dan-tampilkan-hasilnyainclude-mainprintf%e2%80%9dternyata-sem">
+                            10. Program di bawah ini tidak berhasil di-compile karena masih terdapat beberapa
+kesalahan. Betulkan kesalahan program dibawah ini, dan tampilkan hasilnya:
+#include 
+main()
+{
+printf(”ternyata semester %f ini nilaiku jelek”,4);
+printf(”matematika %d dan metode numerik %c”,’B’,D);
+printf(”ooooo.....ternyata kuliah itu susah %d”,”sekali”);
+printf(”sepertinya %s rajin belajar minimal %s sehari”,’harus’,8);</h2><br />
+                        <p><strong>Jawaban dan Penjelasan:</strong></p><p>Pembetulan Kode Program</p><p><strong>#include&lt;stdio.h&gt;</strong></p><p><strong></strong></p><p><strong>int main()</strong></p><p><strong>{</strong></p><p><strong>    printf("ternyata semester %d ini nilaiku jelek\n", 4);</strong></p><p><strong>    printf("matematika %c dan metode numerik %c\n", 'B', 'D');</strong></p><p><strong>    printf("ooooo.....ternyata kuliah itu susah %s\n","sekali");</strong></p><p><strong>    printf("sepertinya %s rajin belajar minimal %d jam sehari\n", "harus", 8);</strong></p><p><strong>}</strong></p><p></p><p>Hasil running/eksekusi</p><p>Dapat dilihat pada gambar terlampir.</p><p></p><br />
+                                            <h2 class="ez-toc-section" id="jelaskan-perbedaan-perintah-progam-printf-dan-scancf-pada-bahasa-c%e2%80%8b">
+                            11. jelaskan perbedaan perintah progam printf dan scancf pada bahasa c​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>Masing-masing perintah tersebur mempunyai perbedaan misalnya pada pencetakan variabel, maka pada printf() harus dimasukan string penandanya, sedangkan padacout() haru dipisahkan dengan tanda &lt;&lt;. pustaka yang harus dimasukan untuk masing-masing perintah juga berbeda yakni pada printf() harus ada #include&lt;stdio.h&gt;, sedangkan pada cout() harus ada &lt;iostream.h&gt;.
+</p><p>Selain output printf() dan cout() ada namanya masukan/input, di dalam printf()inputnya adalah scanf(), sedangkan di cout() inputnya adalah cin(). Apa sich perbedaan antara scanf() dan cin()?? perbedaannya adalah pada scanf() harus dimasukan format scanf() yang sudah ditertukan contohnya %s, sedangkan pada cin() harus dipisahkan dengan tanda &gt;&gt;.
+</p><p>okay dari pada panjanga lebar lebih baik kita lihat di TKP. ……
+</p><p>Example:  printf()/scanf()
+</p><p>menghitung Volume kubus.  </p><p>Ingat di  include nya di tambahkan stdio.h dan conio.h
+</p><p>
+</p><p>#include
+</p><p>#include
+</p><p>main(){
+</p><p>int a,b;
+</p><p>printf(“Menghitung Volume Kubus\n\n”);
+</p><p>printf(“Masukan sisi kubus : “);
+</p><p>scanf(“%d”,&amp;a);
+</p><p>b = a*a*a;
+</p><p>printf(“Jadi volume Kubus adalah : %d “,b);
+</p><p>getch();
+</p><p>}
+</p><p>Example:  cout()/cin()
+</p><p>Ingat di  include nya di tambahkan stdio.h dan conio.h  dan  iostream.h  </p><p>#include
+</p><p>#include
+</p><p>#include
+</p><p>main(){
+</p><p>int s, vol;
+</p><p>cout&lt;&lt;“Menghitung Volume kubus”&lt;   cout&lt;&lt;“Masukan sisi kubus : “;
+</p><p>cin &gt;&gt; s;
+</p><p>vol = s*s*s;
+</p><p>cout&lt;&lt;“Jadi Valume kubus adalah : “&lt;   getch();
+</p><p>}
+</p><p>sebenarnya antara keduanya tidak ada perbedaannya sama2 untuk perintah output, hanya dalam penulisan codingnya saja yang berbeda. Lebih simple dan enak di pahami menggunakan yang mana silahkan teman2 pilih dech.Semoga informasi ini berguna…</p><p></p><br />
+                                            <h2 class="ez-toc-section" id="perhatikan-potongan-kode-bahasa-c-berikut-int-nilai65ifnilai85printf%e2%80%9csangat-baik%e2%80%9delseifnilai75-nilai85printf%e2%80%9cbaik%e2%80%9delseifnil">
+                            12. Perhatikan potongan kode bahasa C++ berikut.int nilai=65;if(nilai&gt;85){printf(“SANGAT BAIK”);}else{if(nilai&gt;75 &amp;&amp; nilai&lt;=85){printf(“BAIK”);}else{If(nilai&gt;65 &amp;&amp; nilai&lt;=75){printf(“CUKUP BAIK”);}else{printf(“TIDAK LULUS”);}}}Keluaran dari program tersebut adalah​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>Keluaran (output) dari program tersebut adalah CUKUP BAIK.</p><p><strong></strong></p><p><strong>Penjelasan:</strong></p><p>variabel nilai memiliki value 65. </p><p>perulangan yang mendefinisikan angka 65 (baik lebih besar atau lebih kecil) yaitu if (nilai &gt; 65 &amp;&amp; nilai &lt;= 75) dan memiliki output "CUKUP BAIK"</p><br />
+                                            <h2 class="ez-toc-section" id="perhatikan-potongan-codingan-dibawah-ini-void-a-printf%e2%80%9csaya-suka-belajar-algoritma%e2%80%9d-int-b-printf%e2%80%9csaya-suka-belajar-java%e2%80%9d-return-0-void-cint-angka1-i">
+                            13. Perhatikan potongan codingan dibawah ini! void a(){ printf(“Saya suka belajar Algoritma”); } int b(){ printf(“Saya suka belajar Java”); return 0; } void c(int angka1, int angka2){ printf(“%d”, angka1+angka2); } Untuk menjumlahkan 2 angka, maka fungsi yang harus dipanggil dari fungsi main adalah
+A. void c();
+ B. c(5,2);
+ C. void c(5,2);
+ D. c();</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>c(5,2);</p><p>kenapa?</p><p></p><p>void a(){</p><p>   printf(“Saya suka belajar Algoritma”); </p><p>} </p><p>int b(){ </p><p>    printf(“Saya suka belajar Java”); r</p><p>    return 0; </p><p>} </p><p>void c(int angka1, int angka2){</p><p>     printf(“%d”, angka1+angka2); </p><p>} </p><p></p><p>di func yang kamu tanyakan, udah jelas kalau void c(int angka1, int angka2) itu menampung 2 argumen, yaitu interger angka1 dan interger angka 2</p><p></p><p>jadi yang harus di panggil ya fungsi c()</p><br />
+                                            <h2 class="ez-toc-section" id="apakah-fungsi-scanf-selalu-harus-disertai-dengan-fungsi-printf-jelaskan-jawabanmu">
+                            14. Apakah fungsi scanf selalu harus disertai dengan fungsi printf? jelaskan jawabanmu</h2><br />
+                        scanf adalah input data<br />printf adalah output menampilkan data<br />
+                                            <h2 class="ez-toc-section" id="a-jelaskan-definisi-dari-printfb-sebutkan-kegunaan-dari-printfc-jelaskan-aturan-sintaks-penggunaan-keyword-printfdalam-pemrograman-dasar-bahasa-c">
+                            15. a. jelaskan definisi dari printf()
+b. sebutkan kegunaan dari printf()
+c. jelaskan aturan (sintaks) penggunaan keyword printf()
+dalam pemrograman dasar bahasa C</h2><br />
+                        a. printf() adalah syntax perintah untuk mengoutputkan teks ke dalam program<br />b. kita bisa menulis teks yang diinginkan dengan printf<br />c.<br />1. printf hanya dapat digunakan jika ada #include&lt;conio.h&gt;<br />2. printf harus ada dalam int main atau void<br />3. penulisan akhirnya harus ada tanda ;<br />
+                                            <h2 class="ez-toc-section" id="3-diketahui-pemograman-c-di-bawah-ini%e2%80%a2include-%e2%80%a2main-%e2%80%a2float-abcd%e2%80%a2printf-%e2%80%9cnilai-a-%e2%80%9c-scanf%e2%80%9cfn%e2%80%9da">
+                            16. 3.	Diketahui pemograman c di bawah ini!
+•	#include 
+•	Main (){
+•	float a,b,c,d;
+•	printf (“Nilai a       = “ );scanf(“%f\n”,&amp;a);
+•	printf (“Nilai b        = “ );scanf(“%f\n”,&amp;b);
+•	c = a+b; d= (a+b) /( a*b);printf (“nilai c   =  f\n”, c);printf(“nilai d        =  f”,d);
+•	} 
+Pada program C di atas terdapat kesalahan perintah, pada baris ke berapa terjadi kesalahan dan jelaskan!</h2><br />
+                        Kesalahan pada baris pertama dimana:<br />preprocessor directive #include belum lengkap.<br />Yang sehsrusnya diisi dengan format: #include &lt;nama-library.h&gt; <br />Seharusnya diisi dengan &lt;stdio.h&gt; dimana library itu berfungsi untuk input / output suatu data.<br /><br />Jadi koreksi pada baris pertama:<br />#include &lt;stdio.h&gt;<br /><br />Terimakasih. Maaf jika salah. Selamat belajar!<strong>[jawaban]<br /></strong><strong><br />Mata Pelajaran: Teknologi Informatika<br /></strong><strong>Kata kunci: Program C<br /></strong><strong><br />• Jawaban pendek:<br /><br /></strong>3.	Diketahui pemograman c di bawah ini!<br />•	#include <br />•	Main (){<br />•	float a,b,c,d;<br />•	printf (“Nilai a = “ );scanf(“%f\n”,&amp;a);<br />•	printf (“Nilai b = “ );scanf(“%f\n”,&amp;b);<br />•	c = a+b; d= (a+b) /( a*b);printf (“nilai c = f\n”, c);printf(“nilai d = f”,d);<br />•	} <br />Pada program C di atas terdapat kesalahan perintah, pada baris ke berapa terjadi kesalahan dan jelaskan!<br /><strong><br />Kesalahan pada baris pertama (#include)<br /><br />• Penjelasan: <br /></strong><br /><strong>Preprocessor Directive (#include) pada potongan kode tersebut tidak lengkap. </strong><strong>Seharusnya diisi #include &lt;library.h&gt;</strong><br /><strong>Pada kode diatas menggunakan fungsi input output data, maka library yang dibutuhkan untuk Preprocessor Directive adalah stdio.h (library yang berfungsi untuk input / output data).</strong><br /><strong>Pembetulan untuk baris pertama: #include &lt;stdio.h&gt;</strong><br />
+                                            <h2 class="ez-toc-section" id="silahkan-cari-kesalahan-dan-perbaiki-program-include-stdio-hint-mainvoidfloat-noprintfmenu-nprintf1-ayam-goreng-nasi-nprintf2-ayam-bakar-nasi-n-nprintfmasukkan">
+                            17. SILAHKAN CARI KESALAHAN DAN PERBAIKI PROGRAM #include &lt;stdio.h&gt;int main(void){float no;printf("MENU: \n");printf("1. Ayam Goreng + Nasi \n");printf("2. Ayam Bakar + Nasi \n \n");printf("Masukkan Nomor Pesanan (1 atau 2) : );scanf(“&amp;d", &amp;no);printf("\n");if(no = 1){printf("Anda Memesan Ayam Goreng + Nasi \n");if elseprintf("Anda Memesan Ayam Bakar + Nasi \n");}return 0;}​​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p><strong>#include &lt;stdio.h&gt;</strong></p><p><strong></strong></p><p><strong>int main(){</strong></p><p><strong>  int no;</strong></p><p><strong>  printf("MENU: \n");</strong></p><p><strong>  printf("1. Ayam Goreng + Nasi \n");</strong></p><p><strong>  printf("2. Ayam Bakar + Nasi \n \n");</strong></p><p><strong>  printf("Masukkan Nomor Pesanan (1 atau 2) : ");</strong></p><p><strong></strong></p><p><strong>  scanf("%d", &amp;no);</strong></p><p><strong>  printf("\n");</strong></p><p><strong></strong></p><p><strong>  if(no == 1){</strong></p><p><strong>    printf("Anda Memesan Ayam Goreng + Nasi \n");</strong></p><p><strong>  } else if (no == 2) {</strong></p><p><strong>    printf("Anda Memesan Ayam Bakar + Nasi \n");</strong></p><p><strong>  }</strong></p><p><strong></strong></p><p><strong>  return 0;</strong></p><p><strong>}</strong></p><p></p><br />
+                                            <h2 class="ez-toc-section" id="if-lama_kerja3-printf-%e2%80%9dsenior%e2%80%9d-else-printf-%e2%80%9djunior%e2%80%9d-jika-lama_kerja-adalah-3-maka-keluaran-dari-program-tersebut-adalah">
+                            18. If (lama_kerja&gt;3) { Printf (”SENIOR”); }else{ Printf (”JUNIOR”); } Jika lama_kerja adalah 3 maka keluaran dari program tersebut adalah...</h2><br />
+                        <p><strong>Jawaban: Junior</strong></p><p></p><p><strong>Penjelasan:</strong></p><p>Karena jika lama kerja lebih dari 3 adalah senior, selain itu junior.</p><p></p><p>Jika salah saya mohon maaf. Semoga membantu.</p><br />
+                                            <h2 class="ez-toc-section" id="fungsi-yang-tepat-untuk-menampilkan-output-kepada-user-adalah-a-printfb-scanfc-scannerd-printer">
+                            19. Fungsi yang tepat untuk menampilkan output kepada user adalah...
+A. Printf
+B. Scanf
+C. Scanner
+D. Printer</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>Fungsi <strong>printf</strong> merupakan fungsi untuk menampilkan output ke layar komputer.</p><br />
+                                            <h2 class="ez-toc-section" id="buatkan-script-di-qtc-jangan-pakai-printf-pakai-perulangan">
+                            20. buatkan script di Qt/c++ 
+-jangan pakai printf
+-pakai perulangan</h2><br />
+                        #include &lt;iostream.h&gt;<br />#include &lt;conio.h&gt;<br />int main()<br />{<br />cout&lt;&lt;("input : ");<br />int n;<br />cin&gt;&gt;n;<br />if (n &gt; 2){<br />//baris<br />for (int i=0; i &lt; n; i++){<br />//kolom<br />for (int j=0; j &lt; n; j++) {<br />//kondisi pembentuk kota<br />if ((i==0) || (i==n-2) || (j==0) || (j==n-2)) {<br />cout&lt;&lt;("*");<br />}<br />else {<br />//kondisi bolong tengahnya<br />if (n%2==1){<br />{<br />cout&lt;&lt;(" ");<br />}<br />}<br />else {<br />cout&lt;&lt;(" ");<br />}<br />}<br />}//akhir kolom<br />cout&lt;&lt;"\n";<br />}//akhir baris<br />}<br />getch();<br />}<br />
+                                            <h2 class="ez-toc-section" id="fungsi-yang-tepat-untuk-membaca-inputan-user-adalah-a-printfb-scanfc-scannerd-printer">
+                            21. Fungsi yang tepat untuk membaca inputan user adalah...
+A. Printf
+B. Scanf
+C. Scanner
+D. Printer</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>B. Scanf</p><p><strong>Penjelasan:</strong></p><p></p><br />
+                                            <h2 class="ez-toc-section" id="include-stdio-h-int-main-printfhain-printfnama-saya-sndian-printfusia-saya-dn20-return-0pada-contoh-soal-tersebut-terdapat-simbol-n-yang-memiliki-fungsi-sebagai">
+                            22. #include &lt;stdio.h&gt; int main() { printf("Hai\n"); printf("Nama saya %s\n","Dian"); printf("Usia saya %d\n",20); return 0}Pada contoh soal tersebut terdapat simbol \n yang memiliki fungsi sebagai…​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>\n berfungsi untuk menambahkan line baru(seperti ENTER) atau newline Escape Sequence</p><p><strong>Penjelasan:</strong></p><p>\n adalah sebuah Escape Sequence yang berfungsi untuk menambahkan line baru(newline Escape Sequence)</p><p></p><p>Jenis-jenis Escape Sequence lainnya ada:</p><p>\" = double quote</p><p>\\ = single backslash</p><p>\a = bell/alert</p><p>\b = backspace</p><p>\r = carriage return</p><p>\n = newline</p><p>\s = space</p><p>\t = tab</p><p></p><p><strong>Contohnya </strong>code</p><p>printf("Hai\nAku ganteng");</p><p><strong>outputnya </strong>akan</p><p>Hai</p><p>Aku ganteng</p><br />
+                                            <h2 class="ez-toc-section" id="perhatikan-potongan-codingan-dibawah-inivoid-a-printf%e2%80%9csaya-suka-belajar-algoritma%e2%80%9dint-b-printf%e2%80%9csaya-suka-belajar-java%e2%80%9d-return-0void-cint-angka1">
+                            23. Perhatikan potongan codingan dibawah ini!
+void a(){
+ printf(“Saya suka belajar Algoritma”);
+}
+int b(){
+ printf(“Saya suka belajar Java”);
+ return 0;
+}
+void c(int angka1, int angka2){
+ printf(“%d”, angka1+angka2);
+}
+Agar pada layar muncul tulisan “Saya suka belajar Java” maka yang harus diketik pada fungsi main adalah…
+ A. void a();
+ B. void b();
+ C. b();
+ D. b;</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>b jawabanya maaf kalo salah</p><p><strong>Jawaban:</strong></p><p>C . b()</p><p><strong>Catatan</strong> : beberapa bahasa pemrograman menggunakan penjelasan saya, sisanya mungkin tidak mengikuti format ini</p><p><strong>Penjelasan:</strong></p><p>Baris kode diatas mungkin seharusnya tidak bisa, karena "<strong>int b()</strong>" bukanlah sebuah fungsi. Suatu fungsi tidak menggunakan "<strong>int</strong>" melainkan menggunakan "<strong>void</strong>" sama seperti "<strong>void a()</strong>" dan "<strong>void c()</strong>", sehingga seharusnya bukan "<strong>int b()</strong>" melainkan "<strong>void b(){ ... }</strong>". Format untuk sebuah fungsi yaitu <strong>void</strong>, lalu diikuti oleh nama dari fungsinya (misal "<strong>b</strong>"), diikuti oleh tanda kurung "<strong>()</strong>" dan kurung kurawal "<strong>{}</strong>". Jika fungsi tersebut ingin menggunakan parameter, maka parameter tersebut disimpan pada tanda kurung. Jika fungsi tersebut ingin melakukan suatu proses (perhitungan, menampilkan kalimat, dll) maka perintah proses tersebut disimpan pada kurung kurawal.</p><p>Untuk memanggil fungsi tersebut maka cukup untuk memanggil namanya saja. Misal ada fungsi </p><p>"<strong>void e(){ </strong></p><p><strong>x = 1+2 ;</strong></p><p><strong>return x ;</strong></p><p><strong>}</strong>"</p><p>lalu kita ingin memanggil fungsi tersebut, maka panggil saja "<strong>e();</strong>"</p><br />
+                                            <h2 class="ez-toc-section" id="dapet-tugas-kayak-gini-di-suruh-koreksi-code-yang-ada-mohon-bantuannyainclude-include-int-mainchar-cprintfnenter-a-character-scanfcc-memeriksa-apakah-karakter-yang">
+                            24. Dapet tugas kayak gini. di suruh koreksi code yang ada. mohon bantuannya
+#include 
+#include 
+int main()
+{
+char c;
+printf("\nEnter a character: ");
+scanf("%c",&amp;c);
+/* memeriksa apakah karakter yang dimasukkan lowercase atau bukan*/
+if (islower(c)!=0)
+printf("%c adalah huruf kecil.",c);
+else {
+printf("%c bukan huruf kecil.\n",c);
+printf("%c adalah huruf kecil %c.",tolower(c),c);
+}
+return 0;
+}</h2><br />
+                        <p><strong>Jawaban dan Penjelasan:</strong></p><p>Tidak ada kesalahan signifikan pada kode program tersebut. Mungkin hanya bagian #include saja yang perlu dilengkapi.</p><p>Perlu diperhatikan, bahwa kode program ini akan memeriksa apakah karakter yang dimasukkan merupakan karakter huruf kecil (lowercase character) atau bukan. Namun tidak ada penanganan kasus untuk karakter input yang bukan berupa huruf alfabet, padahal jelas dari tujuan program ini bahwa yang diperiksa adalah huruf alfabet.</p><p></p><p>_______________________________</p><p></p><p>Berikut ini adalah <strong>kode program</strong> yang sudah dilengkapi, dalam versi dasar (karakter apapun tetap diterima).</p><p></p><p><strong>#include&lt;stdio.h&gt;</strong></p><p><strong>#include&lt;ctype.h&gt;</strong></p><p><strong></strong></p><p><strong>int main() {</strong></p><p><strong>    char c;</strong></p><p><strong></strong></p><p><strong>    printf("\nEnter a character: ");</strong></p><p><strong>    scanf(" %c", &amp;c);</strong></p><p><strong></strong></p><p><strong>    /* memeriksa apakah karakter yang dimasukkan lowercase atau bukan*/</strong></p><p><strong>    if (islower(c) != 0)</strong></p><p><strong>        printf("%c adalah huruf kecil.", c);</strong></p><p><strong>    else {</strong></p><p><strong>        printf("%c bukan huruf kecil.\n", c);</strong></p><p><strong>        printf("%c adalah huruf kecil %c.", tolower(c), c);</strong></p><p><strong>    }</strong></p><p><strong></strong></p><p><strong>    return 0;</strong></p><p><strong>}</strong></p><p>_______________________________</p><p></p><p>Pada kode program tersebut, ada analisis kasus <strong>islower(c) != 0</strong>. Menurut saya, akan lebih "elegan" apabila kode tersebut diganti dengan <strong>!islower(c)</strong>.</p><p>Namun karena hal itu bukan kesalahan, maka tidak perlu dikoreksi.</p><p></p><p>_______________________________</p><p></p><p>Saya tambahkan juga sedikit modifikasi agar program hanya akan memeriksa karakter jika karakternya adalah karakter alfabet (a-z atau A-Z). Mungkin bisa berguna sebagai referensi.</p><p></p><p><strong>#include&lt;stdio.h&gt;</strong></p><p><strong>#include&lt;ctype.h&gt;</strong></p><p><strong></strong></p><p><strong>int main() {</strong></p><p><strong>    char c;</strong></p><p><strong>    </strong></p><p><strong>    do {</strong></p><p><strong>        printf("\nEnter a character: ");</strong></p><p><strong>        scanf(" %c", &amp;c);</strong></p><p><strong>    } while (!isalpha(c));</strong></p><p><strong></strong></p><p><strong>    /* memeriksa apakah karakter yang dimasukkan lowercase atau bukan*/</strong></p><p><strong>    if (islower(c) != 0)</strong></p><p><strong>        printf("%c adalah huruf kecil.", c);</strong></p><p><strong>    else {</strong></p><p><strong>        printf("%c bukan huruf kecil.\n", c);</strong></p><p><strong>        printf("%c adalah huruf kecil %c.", tolower(c), c);</strong></p><p><strong>    }</strong></p><p><strong></strong></p><p><strong>    return 0;</strong></p><p><strong>}</strong></p><p></p><p>_______________________________</p><p></p><p>Saya lampirkan juga beberapa screenshot agar lebih jelas hasil eksekusi/running programnya.</p><p></p><p>Keterangan:</p><p>Program dikode dengan menggunakan Visual Studio Code pada sistem operasi Arch Linux. Namun, hasilnya akan sama saja apabila Anda menggunakan IDE/editor lain di sistem operasi lain (Windows, MacOS, Android, dsb).</p><p></p><p></p><br />
+                                            <h2 class="ez-toc-section" id="fungsi-printf-terdapat-pada-standard-library%e2%80%a6-a-stdlib-h-b-stdio-h-c-strlen-h-d-string-h">
+                            25. Fungsi printf terdapat pada standard library…
+ A. stdlib.h
+ B. stdio.h
+ C. strlen.h
+ D. string.h</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>c jawabanya maaf kalo salah</p><p><strong>Jawaban:</strong></p><p>D. String.H</p><p><strong>Penjelasan:</strong></p><p>semoga bermanfaat</p><br />
+                                            <h2 class="ez-toc-section" id="apakah-fungsi-scanf-selalu-harus-disertai-dengan-fungsi-printfjelaskan-jawabnmu">
+                            26. Apakah fungsi scanf selalu harus disertai dengan fungsi printf?jelaskan jawabnmu</h2><br />
+                        harus, karena printer berguna untuk melihat/menghasilkan hasil scan.<br />semoga membantu ya,,.! :)<br />
+                                            <h2 class="ez-toc-section" id="ifumur-17printf%e2%80%9canda-masih-kecil%e2%80%9delse-ifumur-17-umur-21printf%e2%80%9canda-sudah-remaja%e2%80%9delseprintf%e2%80%9canda-sudah-dewasa%e2%80%9d">
+                            27. if(umur &lt; 17){printf(“Anda masih kecil”);}else if(umur &gt;= 17 &amp;&amp; umur &lt; 21){printf(“Anda sudah remaja”);}else{printf(“Anda sudah dewasa”);}Jika user menginput umurnya adalah 21 maka akan muncul output… A. Anda masih kecil B. Anda sudah remaja C. Anda sudah dewasa D. Tidak ada output​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>B. anda sudah dewasa </p><p><strong>Penjelasan:</strong></p><p>klo gk salah sihh </p><br />
+                                            <h2 class="ez-toc-section" id="misalkan-variabel-a-berisi-bilangan-3-14-penulisan-kode-yang-tepat-untuk-menampilkan-isi-variabel-a-adalah-a-printfa-dab-printfa-dac-printfa-fad-printfa-fa">
+                            28. Misalkan variabel a berisi bilangan 3.14 penulisan kode yang tepat untuk menampilkan isi variabel a adalah.....
+a. printf("a = %d",a);
+b. printf("a =%d",&amp;a);
+c. printf("a =%f",a);
+d. printf("a =%f",&amp;a);
+e. printf("a =",a); 
+Kira kira yang mana Yaa Masih pemula masih bingung saya mohon Dijawab yang bisa ya :) </h2><br />
+                        c. printf("a =%f",a);<br /><br />%f disitu untuk bilangan bertipe Floatc.printf("a{℅f",a);<br />maaf kalau salah ya<br />
+                                            <h2 class="ez-toc-section" id="header-apa-yang-digunakan-untuk-printf-pada-program-c">
+                            29. header apa yang digunakan untuk "printf" pada program c++?</h2><br />
+                        #include&lt;stdio.h&gt;<br /><br />maaf kalo salah<br />
+                                            <h2 class="ez-toc-section" id="apa-saja-perintah-output-dalam-bahasa-cselain-printfputsputchar">
+                            30. Apa saja perintah output dalam bahasa C,selain printf,puts,putchar?</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>cout</p><p></p><p><strong>Penjelasan:</strong></p><p>Dalam C++, <strong>cout</strong> merupakan fungsi yang digunakan untuk mencetak output ke peralatan standar (screen) / layar console program. Untuk menggunakan fungsi <strong>cout</strong>, anda harus menyertakan file header iostream
+.</p><p></p><p>Dalam menggunakan fungsi <strong>cout</strong>, kita menggunakan operator &lt;&lt;. Sama halnya dengan operator &gt;&gt; yang digunakan di dalam fungsi <strong>cin </strong>(perintah masukan).</p><p></p><p><strong>Contoh Program:</strong></p><p>#include &lt;iostream&gt;  </p><p>using namespace std;  </p><p>int main ()
+</p><p>{
+</p><p>     int nilai1=100, nilai2=80;
+</p><p>     int jumlah = nilai1 + nilai2;
+</p><p>
+</p><p>     // Perintah Keluaran / Output Menggunakan Cout
+</p><p>     //  "\n" Digunakan untuk ganti baris
+</p><p>     cout&lt;&lt;"Nilai 1 : "&lt;&lt;nilai1;
+</p><p>     cout&lt;&lt;"\nNilai 2 : "&lt;&lt;nilai2;
+</p><p>
+</p><p>     cout&lt;&lt;"\n\nJumlah Kedua Nilai : "&lt;&lt;jumlah;
+</p><p>
+</p><p>     return 0;
+</p><p>}</p><br />
+                    
+                </div>
+                <div class="youtubeVideo" style="text-align: center">
+                    <h3>Video Terkait</h3>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/r7dybpmnpB8?controls=0" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"allowfullscreen></iframe>
+                </div>
+                <footer class="entry-meta" aria-label="Meta postingan">
+                    <span class="cat-links"><span class="gp-icon icon-categories"><svg viewBox="0 0 512 512"
+                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                                <path
+                                    d="M0 112c0-26.51 21.49-48 48-48h110.014a48 48 0 0143.592 27.907l12.349 26.791A16 16 0 00228.486 128H464c26.51 0 48 21.49 48 48v224c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V112z">
+                                </path>
+                            </svg></span><span class="screen-reader-text">Kategori </span>sbmptn</span>
+            </div>
+        </article>
+    </main>
+            </div>
+            <div class="widget-area sidebar is-right-sidebar" id="right-sidebar">
+                <div class="inside-right-sidebar">
+                    <aside id="categories-2" class="widget inner-padding widget_categories">
+                        <h2 class="widget-title">Topik</h2>
+                        <ul>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://randomedukasi.github.io/langkah-langkah-menyisipkan-gambar.html">Langkah Langkah Menyisipkan Gambar</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://randomedukasi.github.io/no-tracking-j-t.html">No Tracking J t</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://randomedukasi.github.io/tentukan-keliling-segitiga-berikut-23-cm.html">Tentukan Keliling Segitiga Berikut 23 Cm</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://randomedukasi.github.io/kenapa-wa-di-laptop-tidak-bisa-dibuka.html">Kenapa Wa Di Laptop Tidak Bisa Dibuka</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://randomedukasi.github.io/harga-kaos-kaki-futsal.html">Harga Kaos Kaki Futsal</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://randomedukasi.github.io/rute-stasiun-bogor-jakarta.html">Rute Stasiun Bogor Jakarta</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://randomedukasi.github.io/tari-burung-kutilang-menirukan-gerakan.html">Tari Burung Kutilang Menirukan Gerakan</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://randomedukasi.github.io/apakah-boleh-niat-puasa-ramadhan-di-pagi-hari.html">Apakah Boleh Niat Puasa Ramadhan Di Pagi Hari</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://randomedukasi.github.io/tahap-awal-proses-perancangan-kerajinan-kecuali.html">Tahap Awal Proses Perancangan Kerajinan Kecuali</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://randomedukasi.github.io/apa-tujuan-penggunaan-properti-dalam-tari.html">Apa Tujuan Penggunaan Properti Dalam Tari</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://randomedukasi.github.io/contoh-reklame-audio-visual-yaitu.html">Contoh Reklame Audio Visual Yaitu</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://randomedukasi.github.io/arti-peribahasa-lain-ladang-lain-belalang-lain-lubuk-lain-ikannya.html">Arti Peribahasa Lain Ladang Lain Belalang Lain Lubuk Lain Ikannya</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://randomedukasi.github.io/gambar-operasi-hernia.html">Gambar Operasi Hernia</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://randomedukasi.github.io/jual-ban-mobil-makassar.html">Jual Ban Mobil Makassar</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://randomedukasi.github.io/cara-biar-hidung-mancung-alami.html">Cara Biar Hidung Mancung Alami</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://randomedukasi.github.io/alat-musik-daerah-yang-memiliki-bentuk-tabung-contohnya.html">Alat Musik Daerah Yang Memiliki Bentuk Tabung Contohnya</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://randomedukasi.github.io/pemain-softball-berasal-dari-negara.html">Pemain Softball Berasal Dari Negara</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://randomedukasi.github.io/makanan-awetan-berbahan-hewani.html">Makanan Awetan Berbahan Hewani</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://randomedukasi.github.io/play-store-ios.html">Play Store Ios</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://randomedukasi.github.io/kekurangan-teori-atom-bohr.html">Kekurangan Teori Atom Bohr</a>
+                                </li>
+                                                    </ul>
+
+                    </aside>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="site-footer">
+        <footer class="site-info" aria-label="Situs" itemtype="https://schema.org/WPFooter" itemscope>
+            <div class="inside-site-info grid-container">
+                <div class="copyright-bar">
+                    <span class="copyright">&copy; 2023 <a href="https://randomedukasi.github.io"
+                            itemprop="url">QnA</a></span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <a title="Gulirkan kembali ke puncak laman" aria-label="Gulirkan kembali ke puncak laman" rel="nofollow"
+        href="#" class="generate-back-to-top" data-scroll-speed="400" data-start-scroll="300">
+        <span class="gp-icon icon-arrow-up"><svg viewBox="0 0 330 512" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill-rule="evenodd"
+                clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+                <path
+                    d="M305.863 314.916c0 2.266-1.133 4.815-2.832 6.514l-14.157 14.163c-1.699 1.7-3.964 2.832-6.513 2.832-2.265 0-4.813-1.133-6.512-2.832L164.572 224.276 53.295 335.593c-1.699 1.7-4.247 2.832-6.512 2.832-2.265 0-4.814-1.133-6.513-2.832L26.113 321.43c-1.699-1.7-2.831-4.248-2.831-6.514s1.132-4.816 2.831-6.515L158.06 176.408c1.699-1.7 4.247-2.833 6.512-2.833 2.265 0 4.814 1.133 6.513 2.833L303.03 308.4c1.7 1.7 2.832 4.249 2.832 6.515z"
+                    fill-rule="nonzero" />
+            </svg></span>
+    </a>
+    <script id="generate-a11y">
+        ! function() {
+            "use strict";
+            if ("querySelector" in document && "addEventListener" in window) {
+                var e = document.body;
+                e.addEventListener("mousedown", function() {
+                    e.classList.add("using-mouse")
+                }), e.addEventListener("keydown", function() {
+                    e.classList.remove("using-mouse")
+                })
+            }
+        }();
+    </script>
+    <!--[if lte IE 11]>
+<script src='https://randomedukasi.github.io/js/classList.min.js' ?ver=3.2.4' id='generate-classlist-js'></script>
+<![endif]-->
+    <script id='generate-menu-js-extra'>
+        var generatepressMenu = {
+            "toggleOpenedSubMenus": "1",
+            "openSubMenuLabel": "Buka Submenu",
+            "closeSubMenuLabel": "Tutup submenu"
+        };
+    </script>
+    <script src='https://randomedukasi.github.io/js/menu.min.js' ?ver=3.2.4' id='generate-menu-js'></script>
+    <script id='generate-navigation-search-js-extra'>
+        var generatepressNavSearch = {
+            "open": "Buka Kolom Pencarian",
+            "close": "Tutup Kolom Pencarian"
+        };
+    </script>
+    <script src='https://randomedukasi.github.io/js/navigation-search.min.js' ?ver=3.2.4' id='generate-navigation-search-js'></script>
+    <script id='generate-back-to-top-js-extra'>
+        var generatepressBackToTop = {
+            "smooth": "1"
+        };
+    </script>
+    <script src='https://randomedukasi.github.io/js/back-to-top.min.js' ?ver=3.2.4' id='generate-back-to-top-js'></script>
+    <script type='text/javascript' src='//jd3j7g5z1fqs.com/96/78/7a/96787a1945876b1a9c10f79941441964.js'></script>
+  <!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4739059,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4739059&101" alt="" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+</body>
+
+</html>
